@@ -253,5 +253,7 @@ taskmanager/
 ├── docker-compose.yml
 └── frontend/        # (aún vacío – para UI futura)
 
+```
 
 
+</details>
