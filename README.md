@@ -207,6 +207,8 @@ wheel==0.45.1
 ```
 
 </details>
+
+<details>
 <summary>📘 Documentación en Español</summary>
 
 # 🧩 django-taskmanager-api — Backend RESTful para gestión de tareas con Django + JWT + Docker
