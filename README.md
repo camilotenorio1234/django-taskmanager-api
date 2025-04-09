@@ -163,7 +163,7 @@ Example POST body:
 }
 ```
 
-> ⚠️ **Nota:** `assigned_to` debe ser el ID de un usuario existente.
+> ⚠️ **Note:** `assigned_to` It must be the ID of an existing user.
 
 ---
 
@@ -256,6 +256,173 @@ taskmanager/
 └── frontend/        # (aún vacío – para UI futura)
 
 ```
+---
 
+### 🚀 Primeros Pasos
+
+#### 1. Clona el repositorio
+```bash
+git clone https://github.com/camilotenorio1234/django-taskmanager-api.git
+cd django-taskmanager-api
+```
+---
+
+#### 2. Inicia los servicios con Docker
+
+```bash
+docker-compose up --build
+
+```
+
+---
+
+#### Esto iniciará:
+
+- La base de datos PostgreSQL
+- El servidor Django en: http://localhost:8000/
+
+---
+
+#### 3. Aplica migraciones y crea superusuarios
+
+En una nueva terminal, ejecuta:
+
+```bash
+docker-compose exec web python manage.py makemigrations
+docker-compose exec web python manage.py migrate
+```
+
+Luego crea un superusuario:
+
+```bash
+docker-compose exec web python manage.py createsuperuser
+```
+
+Credenciales de ejemplo:
+- Usuario: admin
+- Contraseña: 1234
+
+---
+
+#### 4. Accede al panel de administración
+
+```bash
+http://localhost:8000/admin/
+```
+---
+
+### 🔐 Autenticación JWT
+
+Endpoints para login y refrescar tokens
+
+```sh
+
++------------------------+--------+--------------------------------------------+
+| Endpoint               | Método | Descripción                                |
++------------------------+--------+--------------------------------------------+
+| /api/token/            | POST   | Obtener tokens de acceso y refresh         |
+| /api/token/refresh/    | POST   | Refrescar el token de acceso               |
++------------------------+--------+--------------------------------------------+
+```
+
+Inicia sesión con un cuerpo JSON:
+
+```json
+{
+  "username": "admin",
+  "password": "1234"
+}
+```
+
+Utiliza el token de acceso en tus solicitudes:
+
+```sh
+Authorization: Bearer tu_token_de_acceso
+```
+
+---
+
+### 📮 Endpoints de la API de Tareas
+
+```sh
+
++------------------------+--------+---------------------------+
+| Endpoint               | Método | Descripción               |
++------------------------+--------+---------------------------+
+| /api/tasks/            | GET    | Listar todas las tareas   |
+| /api/tasks/            | POST   | Crear una nueva tarea     |
+| /api/tasks/{id}/       | GET    | Obtener tarea por ID      |
+| /api/tasks/{id}/       | PUT    | Actualizar tarea completa |
+| /api/tasks/{id}/       | PATCH  | Actualizar tarea parcial  |
+| /api/tasks/{id}/       | DELETE | Eliminar tarea            |
++------------------------+--------+---------------------------+
+```
+
+Ejemplo de cuerpo para POST:
+
+```json
+{
+  "title": "Estudiar JWT",
+  "description": "Aprender cómo funciona JWT en Django",
+  "status": "PENDING",
+  "due_date": "2025-04-10",
+  "assigned_to": 1
+}
+```
+
+> ⚠️  Nota: `assigned_to` debe ser el ID de un usuario existente.
+
+---
+
+### 🧪 Pruebas con Postman
+Puedes probar fácilmente los endpoints con Postman:
+
+- Usa /api/token/ para obtener tu JWT
+- Agrega Authorization: Bearer <token> en los headers
+- Usa los endpoints CRUD bajo /api/tasks/
+
+---
+
+### ⚙️ Notas Técnicas
+
+- Autenticación y permisos usando IsAuthenticated
+- Configuración completa de JWT en settings.py
+- magen base: python:3.11
+- Arquitectura de múltiples servicios (web + base de datos) con Docker
+
+---
+
+### 📦 Requisitos
+
+Mira el archivo requirements.txt para las versiones exactas:
+
+```sh
+asgiref==3.8.1
+Django==5.1.7
+djangorestframework==3.15.2
+djangorestframework_simplejwt==5.5.0
+dnspython==2.7.0
+mysqlclient==2.2.7
+pip==25.0
+psycopg2-binary==2.9.10
+PyJWT==2.9.0
+pymongo==4.11.3
+setuptools==75.8.0
+sqlparse==0.5.3
+tzdata==2025.1
+wheel==0.45.1
+```
+
+---
+
+## 📸 Pruebas en Postman
+
+### 🔍 Consulta de tareas (GET)
+
+![GET request in Postman](assets/postman-get.png)
+
+### ✍️ Creación de tarea (POST)
+
+![POST request in Postman](assets/postman-post.png)
 
 </details>
