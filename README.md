@@ -205,6 +205,18 @@ sqlparse==0.5.3
 tzdata==2025.1
 wheel==0.45.1
 ```
+---
+
+## 📸 Postman Testing
+
+### 🔍 Task Retrieval (GET)
+
+![GET request in Postman](assets/postman-get.png)
+
+### ✍️ Task Creation (POST)
+
+![POST request in Postman](assets/postman-post.png)
+
 
 </details>
 
