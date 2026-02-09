@@ -1,32 +1,32 @@
-# 🧩 django-taskmanager-api — Backend RESTful para gestión de tareas con Django + JWT + Docker
+#  django-taskmanager-api — Backend RESTful para gestión de tareas con Django + JWT + Docker
 
-## 🌍 Introducción
+##  Introducción
 
 **django-taskmanager-api** es una API RESTful desarrollada con Django REST Framework que permite gestionar tareas de forma segura con autenticación JWT y control de permisos por usuario. Está completamente dockerizada, integra PostgreSQL como base de datos y es ideal como backend escalable para aplicaciones de productividad, SaaS o sistemas administrativos.
 
 ---
 
 <details>
-<summary>📘 English Documentation</summary>
+<summary> English Documentation</summary>
 
-## 📌 Description
+##  Description
 
 This API provides endpoints to create, read, update and delete tasks. It uses Django REST Framework with JWT authentication, PostgreSQL for data persistence, and is fully containerized with Docker and docker-compose.
 
 ---
 
-## 🛠️ Built With
+##  Built With
 
-- 🐍 Python 3.11.11
-- 🌐 Django 5.1.7
-- 🔧 Django REST Framework 3.15.2
-- 🔐 JWT via `djangorestframework-simplejwt`
-- 🛢️ PostgreSQL
-- 🐳 Docker + docker-compose
+-  Python 3.11.11
+-  Django 5.1.7
+-  Django REST Framework 3.15.2
+-  JWT via `djangorestframework-simplejwt`
+-  PostgreSQL
+-  Docker + docker-compose
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 
 ```sh
 taskmanager/
@@ -49,7 +49,7 @@ taskmanager/
 
 ---
 
-## 🚀 Getting Started
+##  Getting Started
 
 ### 1. Clone the Repository
 
@@ -102,8 +102,7 @@ http://localhost:8000/admin/
 
 --- 
 
-### 🔐 JWT Authentication
-
+###  JWT Authentication
 #### Login & Refresh Endpoints
 
 ```sh
@@ -133,9 +132,9 @@ Authorization: Bearer your_access_token
 ```
 ---
 
-### 📮 API Endpoints for Tasks
+###  API Endpoints for Tasks
 
-### 📮 API Endpoints for Tasks
+###  API Endpoints for Tasks
 
 ```sh
 +------------------------+--------+---------------------------+
@@ -163,11 +162,11 @@ Example POST body:
 }
 ```
 
-> ⚠️ **Note:** `assigned_to` It must be the ID of an existing user.
+>  **Note:** `assigned_to` It must be the ID of an existing user.
 
 ---
 
-### 🧪 Postman Testing
+###  Postman Testing
 
 You can test endpoints easily with Postman:
 
@@ -176,7 +175,7 @@ You can test endpoints easily with Postman:
 - Use CRUD endpoints under /api/tasks/.
 
 ---
-### ⚙️ Tech Notes
+###  Tech Notes
 
 - Authentication and permissions enforced with IsAuthenticated
 - Full JWT config in settings.py
@@ -185,7 +184,7 @@ You can test endpoints easily with Postman:
 
 ---
 
-### 📦 Requirements
+###  Requirements
 
 See requirements.txt for exact dependency versions:
 
@@ -207,13 +206,13 @@ wheel==0.45.1
 ```
 ---
 
-## 📸 Postman Testing
+##  Postman Testing
 
-### 🔍 Task Retrieval (GET)
+###  Task Retrieval (GET)
 
 ![GET request in Postman](assets/postman-get.png)
 
-### ✍️ Task Creation (POST)
+###  Task Creation (POST)
 
 ![POST request in Postman](assets/postman-post.png)
 
@@ -221,34 +220,34 @@ wheel==0.45.1
 </details>
 
 <details>
-<summary>📘 Documentación en Español</summary>
+<summary> Documentación en Español</summary>
 
-# 🧩 django-taskmanager-api — Backend RESTful para gestión de tareas con Django + JWT + Docker
+#  django-taskmanager-api — Backend RESTful para gestión de tareas con Django + JWT + Docker
 
-## 🌍 Introducción
+##  Introducción
 
 **django-taskmanager-api** es una API RESTful desarrollada con Django REST Framework que permite gestionar tareas de forma segura con autenticación JWT y control de permisos por usuario. Está completamente dockerizada, integra PostgreSQL como base de datos y es ideal como backend escalable para aplicaciones de productividad, SaaS o sistemas administrativos.
 
 ---
 
-## 📌 Descripción
+##  Descripción
 
 Esta API proporciona endpoints para crear, leer, actualizar y eliminar tareas. Utiliza Django REST Framework con autenticación JWT, PostgreSQL para la persistencia de datos y está completamente contenerizada con Docker y docker-compose.
 
 ---
 
-## 🛠️ Tecnologías Utilizadas
+##  Tecnologías Utilizadas
 
-- 🐍 Python 3.11.11
-- 🌐 Django 5.1.7
-- 🔧 Django REST Framework 3.15.2
-- 🔐 JWT con `djangorestframework-simplejwt`
-- 🛢️ PostgreSQL
-- 🐳 Docker + docker-compose
+-  Python 3.11.11
+-  Django 5.1.7
+-  Django REST Framework 3.15.2
+-  JWT con `djangorestframework-simplejwt`
+-  PostgreSQL
+-  Docker + docker-compose
 
 ---
 
-## 📁 Estructura del Proyecto
+##  Estructura del Proyecto
 
 ```sh
 taskmanager/
@@ -270,7 +269,7 @@ taskmanager/
 ```
 ---
 
-### 🚀 Primeros Pasos
+###  Primeros Pasos
 
 #### 1. Clona el repositorio
 ```bash
@@ -323,7 +322,7 @@ http://localhost:8000/admin/
 ```
 ---
 
-### 🔐 Autenticación JWT
+###  Autenticación JWT
 
 Endpoints para login y refrescar tokens
 
@@ -354,7 +353,7 @@ Authorization: Bearer tu_token_de_acceso
 
 ---
 
-### 📮 Endpoints de la API de Tareas
+###  Endpoints de la API de Tareas
 
 ```sh
 
@@ -382,11 +381,11 @@ Ejemplo de cuerpo para POST:
 }
 ```
 
-> ⚠️  Nota: `assigned_to` debe ser el ID de un usuario existente.
+>   Nota: `assigned_to` debe ser el ID de un usuario existente.
 
 ---
 
-### 🧪 Pruebas con Postman
+###  Pruebas con Postman
 Puedes probar fácilmente los endpoints con Postman:
 
 - Usa /api/token/ para obtener tu JWT
@@ -395,7 +394,7 @@ Puedes probar fácilmente los endpoints con Postman:
 
 ---
 
-### ⚙️ Notas Técnicas
+###  Notas Técnicas
 
 - Autenticación y permisos usando IsAuthenticated
 - Configuración completa de JWT en settings.py
@@ -404,7 +403,7 @@ Puedes probar fácilmente los endpoints con Postman:
 
 ---
 
-### 📦 Requisitos
+###  Requisitos
 
 Mira el archivo requirements.txt para las versiones exactas:
 
@@ -427,13 +426,13 @@ wheel==0.45.1
 
 ---
 
-## 📸 Pruebas en Postman
+##  Pruebas en Postman
 
-### 🔍 Consulta de tareas (GET)
+###  Consulta de tareas (GET)
 
 ![GET request in Postman](assets/postman-get.png)
 
-### ✍️ Creación de tarea (POST)
+###  Creación de tarea (POST)
 
 ![POST request in Postman](assets/postman-post.png)
 
